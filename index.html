@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renda Extra – Junte Lixo e Transforme sua Cidade</title>
+  <style>
+    /* Reset e configurações básicas */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      line-height: 1.6; 
+      background: #fff8e1; /* tom claro alternativo */
+      color: #333; 
+    }
+
+    /* Navbar */
+    header { background: #2c3e50; padding: 10px 20px; }
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    nav .logo { color: #fff; font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a { color: #fff; text-decoration: none; font-size: 1rem; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1200x500?text=Sua+Cidade+Mais+Limpa') no-repeat center center/cover;
+      height: 500px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero .content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+    .hero a { background: #e67e22; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .hero a:hover { background: #d35400; }
+
+    /* Seções do Site */
+    .section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .section p { margin-bottom: 20px; text-align: justify; }
+
+    /* Formulário de Cadastro */
+    .form-cadastro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-cadastro label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .form-cadastro input,
+    .form-cadastro select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-cadastro button {
+      grid-column: span 2;
+      padding: 12px;
+      background: #27ae60;
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .form-cadastro button:hover { background: #219150; }
+
+    /* Serviços - Remuneração e Tempo de Serviço */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .service {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .service h3 { margin-bottom: 10px; color: #e67e22; }
+    .service p { font-size: 0.95rem; margin-bottom: 5px; }
+
+    /* Rodapé */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsividade */
+    @media(max-width: 768px) {
+      .form-cadastro { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho e Menu -->
+  <header>
+    <nav>
+      <div class="logo">Prefeitura de [Cidade]</div>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#cadastro">Cadastro</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero" id="home">
+    <div class="content">
+      <h1>Ganhe Renda Extra Ajudando a Limpar Nossa Cidade</h1>
+      <p>Cadastre-se para participar do programa e escolha a tarefa que melhor se adapta a você.</p>
+      <a href="#cadastro">Quero Participar</a>
+    </div>
+  </section>
+
+  <!-- Seção de Cadastro -->
+  <section class="section" id="cadastro">
+    <h2>Cadastro para Participação</h2>
+    <p>Inscreva-se no programa e comece a ganhar dinheiro contribuindo para a limpeza e melhoria da nossa cidade.</p>
+    <form class="form-cadastro">
+      <div>
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Seu melhor email">
+      </div>
+      <div>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx">
+      </div>
+      <div>
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" placeholder="Seu bairro">
+      </div>
+      <div>
+        <label for="servico">Serviço de Interesse:</label>
+        <select id="servico" name="servico">
+          <option value="lixo">Coleta de Lixo</option>
+          <option value="urbanismo">Manutenção Urbana</option>
+          <option value="eventos">Eventos Comunitários</option>
+          <option value="jardinagem">Jardinagem Urbana</option>
+          <option value="reciclagem">Reciclagem Seletiva</option>
+          <option value="fiscalizacao">Fiscalização de Vizinhança</option>
+        </select>
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+
+  <!-- Seção de Serviços com Remuneração e Tempo -->
+  <section class="section" id="servicos">
+    <h2>Remuneração e Tempo de Serviço</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Coleta de Lixo</h3>
+        <p><strong>Remuneração:</strong> R$ 5,00 por quilo</p>
+        <p><strong>Tempo:</strong> 1 hora por turno</p>
+      </div>
+      <div class="service">
+        <h3>Manutenção Urbana</h3>
+        <p><strong>Remuneração:</strong> R$ 15,00 por serviço</p>
+        <p><strong>Tempo:</strong> 2 horas</p>
+      </div>
+      <div class="service">
+        <h3>Eventos Comunitários</h3>
+        <p><strong>Remuneração:</strong> R$ 50,00 por evento</p>
+        <p><strong>Tempo:</strong> 4 horas</p>
+      </div>
+      <div class="service">
+        <h3>Jardinagem Urbana</h3>
+        <p><strong>Remuneração:</strong> R$ 10,00 por área</p>
+        <p><strong>Tempo:</strong> 1,5 horas</p>
+      </div>
+      <div class="service">
+        <h3>Reciclagem Seletiva</h3>
+        <p><strong>Remuneração:</strong> R$ 3,00 por saco</p>
+        <p><strong>Tempo:</strong> 30 minutos</p>
+      </div>
+      <div class="service">
+        <h3>Fiscalização de Vizinhança</h3>
+        <p><strong>Remuneração:</strong> R$ 20,00 por turno</p>
+        <p><strong>Tempo:</strong> 3 horas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Prefeitura de [Cidade]. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
